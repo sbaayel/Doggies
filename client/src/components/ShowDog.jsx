@@ -12,7 +12,7 @@ export default function ShowDogs(props) {
             props.history.push(`/dogs/${dog.id}/edit`);
           }}>Edit</button>
           <button onClick={() => {
-            props.handleDogDelete(Dog.id);
+            props.handleDogDelete(dog.id);
           }}>Delete</button>
           <br />
         </React.Fragment>
