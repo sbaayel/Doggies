@@ -186,5 +186,3 @@ database_db
 
 
 ## Code Issues & Resolutions
-
-
