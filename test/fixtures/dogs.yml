@@ -2,22 +2,24 @@
 
 one:
   name: MyString
-  age: MyString
   sex: MyString
+  age: MyString
   breed: MyString
   height: MyString
   weight: MyString
   description: MyString
   shelter: MyString
   image: MyString
+  user: one
 
 two:
   name: MyString
-  age: MyString
   sex: MyString
+  age: MyString
   breed: MyString
   height: MyString
   weight: MyString
   description: MyString
   shelter: MyString
   image: MyString
+  user: two
