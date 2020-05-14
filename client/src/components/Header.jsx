@@ -1,32 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './Header.css'
 export default function Header(props) {
   return (
-    <header>
-      <h1>Doggies</h1>
+    <header className="nav">
+      <h1 className="logo">Doggies</h1>
       {
         props.currentUser
           ?
           <>
-            <p>{props.currentUser.username}</p>
+            <p className="tab">{props.currentUser.username}</p>
             <button onClick={props.handleLogout}>Logout</button>
+            <Link to="/dogs/new"><button>Create</button></Link>
           </>
           :
 
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <Link className="tab" to="/login">Login</Link>
+            <Link className="tab" to="/register">Register</Link>
             </>
       }
-      <hr />
+      
       {
         props.currentUser
         &&
         <>
           <Link to="/dogs">Dogs</Link>
           
-          <hr />
+          
         </>
       }
     </header>

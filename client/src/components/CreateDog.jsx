@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class CreateDog extends Component {
   state = {
+
     name: "",
     age: "",
     sex: "",
@@ -10,7 +11,8 @@ export default class CreateDog extends Component {
     weight: "",
     description: "",
     shelter: "",
-    image: ""
+    image: "",
+    user_id: 1,
   }
 
   handleChange = (e) => {

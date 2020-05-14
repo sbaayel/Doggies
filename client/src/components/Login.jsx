@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-
+import './Login.css'
 export default class Login extends Component {
   state = {
     username: '',
     email: '',
-    password_digest: ''
+    password: ''
   }
 
   handleChange = (e) => {
@@ -16,8 +16,9 @@ export default class Login extends Component {
   }
 
   render() {
-    const { username, email, password_digest } = this.state;
+    const { username, email, password } = this.state;
     return (
+      <div className="form-container">
       <form onSubmit={(e) => {
         e.preventDefault();
         this.props.handleLogin(this.state);
@@ -47,13 +48,14 @@ export default class Login extends Component {
           id="password"
           type="password"
           name="password"
-          value={password_digest}
+          value={password}
           onChange={this.handleChange}
         />
         <br />
         <Link to='/register'>register</Link>
         <button>Submit</button>
-      </form>
+        </form>
+        </div>
     )
   }
 }

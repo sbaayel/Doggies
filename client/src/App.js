@@ -8,8 +8,10 @@ import {
   loginUser,
   registerUser,
   verifyUser,
+  
   removeToken
 } from './services/api-helper';
+import Footer from './components/Footer';
 
 class App extends Component {
   state = {
@@ -48,13 +50,20 @@ class App extends Component {
     return (
       <div className="App">
         <Header
+
           handleLogout={this.handleLogout}
           currentUser={this.state.currentUser}
+          
+          
         />
         <Main
           handleRegister={this.handleRegister}
           handleLogin={this.handleLogin}
+
+          
         />
+
+        <Footer/>
       </div>
     )
   }

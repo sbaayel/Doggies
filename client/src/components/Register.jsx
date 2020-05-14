@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-
+import './Register.css'
 export default class Register extends Component {
   state = {
     username: '',
     email: '',
-    password_digest: ''
+    password: ''
   }
 
   handleChange = (e) => {
@@ -15,8 +15,9 @@ export default class Register extends Component {
   }
 
   render() {
-    const { username, email, password_digest } = this.state;
+    const { username, email, password } = this.state;
     return (
+      <div className="form-container-sign-up">
       <form onSubmit={(e) => {
         e.preventDefault();
         this.props.handleRegister(this.state);
@@ -46,12 +47,13 @@ export default class Register extends Component {
           id="password"
           type="password"
           name="password"
-          value={password_digest}
+          value={password}
           onChange={this.handleChange}
         />
         <br />
         <button>Submit</button>
-      </form>
+        </form>
+        </div>
     )
   }
 }
