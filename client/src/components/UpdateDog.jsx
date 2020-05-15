@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getOneDog } from '../services/api-helper';
-
+import '../App.css'
 export default class UpdateDog extends Component {
   state = {
     name: ""

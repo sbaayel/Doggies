@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import '../App.css'
 export default class CreateDog extends Component {
   state = {
 
@@ -25,7 +25,7 @@ export default class CreateDog extends Component {
   render() {
     const { name, age, sex, breed, height, weight, description, shelter, image} = this.state;
     return (
-      <form onSubmit={(e) => {
+      <form className="create-form" onSubmit={(e) => {
         e.preventDefault();
         this.props.handleDogSubmit(this.state);
         this.props.history.push('/dogs');
@@ -94,7 +94,7 @@ export default class CreateDog extends Component {
           onChange={this.handleChange}
         />
 
-<label htmlFor="description">decription:</label>
+<label className="blog-div" htmlFor="description">Write decription:</label>
         <input
           id="description"
           type="text"
@@ -103,7 +103,7 @@ export default class CreateDog extends Component {
           onChange={this.handleChange}
         />
 
-<label htmlFor="image">image:</label>
+<label className="image-div" htmlFor="image">image:</label>
         <input
           id="image"
           type="text"

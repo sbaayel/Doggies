@@ -53,7 +53,8 @@ button {
   margin-top: 3em;
 }
 .form-container {
-  margin-top: 20px;
+  margin-top: 200px;
+  margin-left: 350px;
   align-self: center;
   /* padding: 1em; */
   width: 50%;

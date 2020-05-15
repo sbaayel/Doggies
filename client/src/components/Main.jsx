@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-
+import '../App.css'
 import Login from './Login';
 import Register from './Register';
 import { getAllDogs, postDog, putDog, destroyDog } from '../services/api-helper';
@@ -12,7 +12,7 @@ import UpdateDog from './UpdateDog';
 export default class Main extends Component {
   state = {
     
-    foods: []
+    dogs: []
   }
 
   componentDidMount() {

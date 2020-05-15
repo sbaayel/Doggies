@@ -1,38 +1,93 @@
+body {
+  margin: 0;
+  font-size: 1.5em;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* =============== header ================== */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-main {
+  height: 10vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.auth {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.auth>p {
+  margin-right: 10px;
+}
+
+.logo {
+  flex: 1;
+  width: 250px;
+  transition: 250ms all;
+  max-width: 30vw;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+nav > a {
+  margin: 10px;
+}
+
+/* =============== main ================== */
+
+h3 {
+  padding: 30px;
+  font-size: 1.5em;
+}
+
+.food-list > a {
+  grid-column: 3/4;
+}
+
+.food-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 0 25%;
+}
+
+.food-list > * {
+  margin: 10px;
+}
+
+/* =============== main ================== */
+
+.auth-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 25%;
+  grid-gap: 10px;
+}
+
+.auth-form > label {
+  justify-self: end;
+}
+
+.auth-form > p {
+  margin: 0;
+  padding-top: 7px;
+  justify-self: end;
+}
+
+.auth-form > button {
+  justify-self: end;
+  align-self: start;
+  padding: 15px 40px;
 }

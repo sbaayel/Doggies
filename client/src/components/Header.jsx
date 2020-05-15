@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css'
+import '../App.css'
 export default function Header(props) {
   return (
-    <header className="nav">
-      <h1 className="logo">Doggies</h1>
+    <header>
+      <div className="header-main">
+        <h1 className="logo">Doggies</h1>
+        <div className="auth">
       {
         props.currentUser
           ?
@@ -19,8 +21,9 @@ export default function Header(props) {
             <Link className="tab" to="/login">Login</Link>
             <Link className="tab" to="/register">Register</Link>
             </>
-      }
-      
+          }
+        </div>
+      </div>
       {
         props.currentUser
         &&
