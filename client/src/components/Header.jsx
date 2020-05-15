@@ -1,19 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../App.css'
+import { Link, NavLink } from 'react-router-dom';
+// import '../App.css'
+import './Header.css'
 export default function Header(props) {
   return (
     <header>
-      <div className="header-main">
+      <div className="nav">
        <Link to="/dogs"><h1 className="logo">Doggies</h1></Link> 
         <div className="auth">
       {
         props.currentUser
           ?
           <>
-            <p className="tab">{props.currentUser.username}</p>
-            <button onClick={props.handleLogout}>Logout</button>
-            <Link to="/dogs/new"><button>Create</button></Link>
+                <p className="tab">welcome {props.currentUser.username}</p>
+                <Link className="tab" to="/dogs/new">Add a dog</Link>
+                <p className="tab" onClick={props.handleLogout}>Logout</p>
+            
           </>
           :
 
@@ -28,7 +30,7 @@ export default function Header(props) {
         props.currentUser
         &&
         <>
-         <Link className="tab" to="/adopt">Adopt</Link>
+         {/* <Link className="tab" to="/adopt">Adopt</Link> */}
         
           
         </>
