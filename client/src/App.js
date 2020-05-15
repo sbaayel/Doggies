@@ -8,7 +8,7 @@ import {
   loginUser,
   registerUser,
   verifyUser,
-  
+  postAdopt,
   removeToken
 } from './services/api-helper';
 import Footer from './components/Footer';
@@ -30,6 +30,13 @@ class App extends Component {
   handleRegister = async (registerData) => {
     const currentUser = await registerUser(registerData);
     this.setState({ currentUser })
+  }
+
+  handleAdopt = async (adoptData) => {
+    const adoptDog = await postAdopt(adoptData);
+    this.setState(prevState => ({
+      posts: [...prevState.posts, adoptDog]
+    }))
   }
 
   confirmUser = async () => {

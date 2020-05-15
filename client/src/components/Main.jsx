@@ -3,10 +3,12 @@ import { Route } from 'react-router-dom';
 import '../App.css'
 import Login from './Login';
 import Register from './Register';
-import { getAllDogs, postDog, putDog, destroyDog } from '../services/api-helper';
+import { getAllDogs, postDog, putDog, destroyDog, postAdopt, getOneDog } from '../services/api-helper';
 import ShowDogs from './ShowDog';
 import CreateDog from './CreateDog';
 import UpdateDog from './UpdateDog';
+import Adopt from './Adopt'
+import DogDetails from './DogDetails'
 
 
 export default class Main extends Component {
@@ -25,6 +27,11 @@ export default class Main extends Component {
     this.setState({ dogs })
   }
 
+  getOneDog = async () => {
+    const dogs = await getOneDog();
+    this.setState({ dogs })
+  }
+
   handleDogSubmit = async (dogData) => {
     const newDog = await postDog(dogData);
     this.setState(prevState => ({
@@ -40,6 +47,14 @@ export default class Main extends Component {
       })
     }))
   }
+
+  handleAdoptSubmit = async (adoptData) => {
+    const adoptDog = await postAdopt(adoptData);
+    this.setState(prevState => ({
+      posts: [...prevState.posts, adoptDog]
+    }))
+  }
+
 
   handleDogDelete = async (id) => {
     await destroyDog(id);
@@ -74,6 +89,16 @@ export default class Main extends Component {
             dogs={this.state.dogs}
           />
         )} />
+
+         <Route exact path= '/dogs/:id' render={(props) => {
+          const { id } = props.match.params
+          return <DogDetails
+            {...props}
+            dogId={id}
+          
+          />
+        }
+        } />
         
         <Route path="/dogs/new" render={(props) => (
           <CreateDog
@@ -89,7 +114,13 @@ export default class Main extends Component {
             dogId={id}
           />
         }} />
-        
+       
+       <Route path="/adopts/:id/new" render={(props) => (
+          <Adopt
+            {...props}
+            handleAdoptSubmit={this.handleAdoptSubmit}
+          />
+        )} />
       </main>
     )
   }

@@ -28,8 +28,8 @@ export default function Header(props) {
         props.currentUser
         &&
         <>
-         
-          
+         <Link className="tab" to="/adopt">Adopt</Link>
+        
           
         </>
       }

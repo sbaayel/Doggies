@@ -1,33 +1,43 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
 
-export default function DogDetails(props) {
-  return (
-    <div>
-      <h3>Dogs</h3>
-      {props.dogs.map(dog => (
-        <React.Fragment key={dog.id}>
-          <p>{dog.name}</p>
+import React, { Component } from 'react'
 
+import '../App.css'
+import { getOneDog } from '../services/api-helper'
 
+class DogDetails extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      dog: null
+    }
+  }
+    componentDidMount(){
+      this.setDog() 
+  }
+    
+    
+  
+  setDog = async () => {
+    const dog = await getOneDog(this.props.dogId);
+    this.setState({ dog })
+  }
 
-
-
-
-
-
-
-
-          <button onClick={() => {
-            props.history.push(`/dogs/${dog.id}/edit`);
-          }}>Edit</button>
-          <button onClick={() => {
-            props.handleDogDelete(dog.id);
-          }}>Delete</button>
-          <br />
-        </React.Fragment>
-      ))}
-     
-    </div>
-  )
+  render() {
+    const { dog } = this.state;
+    
+    return (
+      <div>
+        {
+          dog &&
+          <>
+            <h1>{dog.name}</h1>
+            <h1>{dog.breed}</h1>
+            
+          </>
+        }
+         
+      </div>
+    )
+  }
 }
+  export default DogDetails;

@@ -64,3 +64,7 @@ export const destroyDog = async (id) => {
   return resp;
 }
 
+export const postAdopt = async (adoptData, dogId) => {
+  const resp = await api.post(`/dogs/${dogId}/adopts`, adoptData);
+  return resp.data;
+}
