@@ -29,7 +29,15 @@ export default class UpdateDog extends Component {
   setFormData = async () => {
     const dog = await getOneDog(this.props.dogId);
     this.setState({
-      name: dog.name
+      name: dog.name,
+      sex: dog.sex,
+      breed: dog.breed,
+      age: dog.age,
+      weight: dog.weight,
+      height: dog.height,
+      description: dog.description,
+      shelter: dog.shelter,
+      image: dog.image
     })
   }
 

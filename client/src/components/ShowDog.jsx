@@ -9,7 +9,7 @@ export default function ShowDogs(props) {
       {props.dogs.map(dog => (
         <React.Fragment key={dog.id}>
           <Link to={`/dogs/${dog.id}`}>{dog.name}</Link>
-          
+          <button>Adopt</button>
           <button onClick={() => {
             props.history.push(`/dogs/${dog.id}/edit`);
           }}>Edit</button>
@@ -19,7 +19,7 @@ export default function ShowDogs(props) {
         
         </React.Fragment>
       ))}
-        <Link to="/new/dogs"><button>Create</button></Link>
+        {/* <Link to="/new/dogs"><button>Create</button></Link> */}
      </div>
     </div>
   )

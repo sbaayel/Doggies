@@ -1,13 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default function ShowDogs(props) {
+export default function DogDetails(props) {
   return (
     <div>
       <h3>Dogs</h3>
       {props.dogs.map(dog => (
         <React.Fragment key={dog.id}>
-          <Link to={`/dogs/${dog.id}`}>{dog.name}</Link>
+          <p>{dog.name}</p>
+
+
+
+
+
+
+
+
+
+
           <button onClick={() => {
             props.history.push(`/dogs/${dog.id}/edit`);
           }}>Edit</button>
@@ -17,7 +27,7 @@ export default function ShowDogs(props) {
           <br />
         </React.Fragment>
       ))}
-      <Link to="/dogs/new"><button>Create</button></Link>
+     
     </div>
   )
 }
