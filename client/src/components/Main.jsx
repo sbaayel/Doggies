@@ -74,6 +74,7 @@ export default class Main extends Component {
             dogs={this.state.dogs}
           />
         )} />
+        <button>Adopt</button>
         <Route path="/dogs/new" render={(props) => (
           <CreateDog
             {...props}

@@ -5,7 +5,7 @@ export default function Header(props) {
   return (
     <header>
       <div className="header-main">
-        <h1 className="logo">Doggies</h1>
+       <Link to="/dogs"><h1 className="logo">Doggies</h1></Link> 
         <div className="auth">
       {
         props.currentUser
@@ -28,7 +28,7 @@ export default function Header(props) {
         props.currentUser
         &&
         <>
-          <Link to="/dogs">Dogs</Link>
+         
           
           
         </>
