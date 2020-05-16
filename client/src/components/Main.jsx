@@ -48,8 +48,8 @@ export default class Main extends Component {
     }))
   }
 
-  handleAdoptSubmit = async (adoptData) => {
-    const adoptDog = await postAdopt(adoptData);
+  handleAdoptSubmit = async (adoptData, dogId) => {
+    const adoptDog = await postAdopt(adoptData, dogId);
     this.setState(prevState => ({
       posts: [...prevState.posts, adoptDog]
     }))
@@ -81,7 +81,7 @@ export default class Main extends Component {
             handleRegister={this.props.handleRegister}
           />
         )} />
-        
+        {this.props.currentUser &&
         <Route exact path='/dogs' render={(props) => (
           <ShowDogs
             {...props}
@@ -89,13 +89,14 @@ export default class Main extends Component {
             dogs={this.state.dogs}
           />
         )} />
-
+ }
          <Route exact path= '/dogs/:id' render={(props) => {
           const { id } = props.match.params
           return <DogDetails
             {...props}
             dogId={id}
-          
+            handleDogDelete={this.handleDogDelete}
+            dogs={this.state.dogs}
           />
         }
         } />
@@ -114,13 +115,17 @@ export default class Main extends Component {
             dogId={id}
           />
         }} />
-       
+       {this.props.currentUser &&
        <Route path="/adopts/:id/new" render={(props) => (
           <Adopt
             {...props}
+            currentUser={this.props.currentUser.id}
+            dogId = {props.match.params.id}
             handleAdoptSubmit={this.handleAdoptSubmit}
           />
         )} />
+}
+
       </main>
     )
   }

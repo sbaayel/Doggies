@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
+import './Register.css'
 export default class Register extends Component {
   state = {
     username: '',
@@ -17,14 +18,15 @@ export default class Register extends Component {
   render() {
     const { username, email, password } = this.state;
     return (
-      
+      <div className="form-container-sign-up">
+      <h3>Register</h3>
       <form className="auth-form"
         onSubmit={(e) => {
         e.preventDefault();
         this.props.handleRegister(this.state);
         this.props.history.push('/');
       }}>
-        <h3>Register</h3>
+        
         <label htmlFor="username">username:</label>
         <input
           id="username"
@@ -54,7 +56,7 @@ export default class Register extends Component {
         <br />
         <button>Submit</button>
         </form>
-       
+        </div>
     )
   }
 }

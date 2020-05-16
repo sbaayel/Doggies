@@ -1,0 +1,34 @@
+div.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  text-align: center;
+
+}
+
+.content{
+  margin-top: 100px; 
+  align-self: left;
+  padding-left: -5px;
+}
+
+.cell {
+ 
+ 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px 30px 0px 0px;
+   
+    padding: 10px;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+ 
+  height: 350px;
+}
+.dog-name{
+  padding-right: 25px;
+margin-top: 10px;
+}
+

@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
+import Modal from 'react-awesome-modal';
+import {Link} from 'react-router-dom'
 import '../App.css'
 export default class Adopt extends Component {
   state = {
     name: '',
     address: '',
-    message: ''
+    message: '',
+    user_id: this.props.currentUser,
+    dog_id: this.props.dogId,
+    visible: false
   }
 
   handleChange = (e) => {
@@ -13,15 +18,32 @@ export default class Adopt extends Component {
       [name]: value
     });
   }
+  openModal() {
+    this.setState({
+        visible : true
+    });
+}
+
+closeModal() {
+    this.setState({
+        visible : false
+    });
+}
 
   render() {
-    const { name, address,  message} = this.state;
+    const { name, address, message} = this.state;
     return (
-      
+      <>
+        {/* <input type="button" value="Open" onClick={() => this.openModal()} />
+        <Modal visible={this.state.visible}
+                    width="400"
+                    height="300"
+                    effect="fadeInUp"
+                    onClickAway={() => this.closeModal()}> */}
       <form className="auth-form"
         onSubmit={(e) => {
         e.preventDefault();
-        this.props.handleAdopt(this.state);
+        this.props.handleAdoptSubmit(this.state, this.state.dog_id);
         this.props.history.push('/');
       }}>
         <h3>Register</h3>
@@ -52,9 +74,11 @@ export default class Adopt extends Component {
           onChange={this.handleChange}
         />
         <br />
-        <button>Submit</button>
-        </form>
-       
+            <button>Submit</button>
+            <Link to="/dogs" onClick={() => this.closeModal()}>Close</Link>
+          </form>
+        {/* </Modal> */}
+       </>
     )
   }
 }

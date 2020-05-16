@@ -16,9 +16,9 @@ export default class UpdateDog extends Component {
   }
 
   handleChange = (e) => {
-    const { value } = e.target;
+    const {name, value } = e.target;
     this.setState({
-      name: value
+      [name]: value
     })
   }
 
@@ -51,55 +51,63 @@ export default class UpdateDog extends Component {
         <h3>Update Dog</h3>
         <lable>name:</lable>
         <input
+          name="name"
           type="text"
           value={this.state.name}
           onChange={this.handleChange}
         />
 <lable>sex:</lable>
 <input
-          
+          name="sex"
           type="text"
           value={this.state.sex}
           onChange={this.handleChange}
         />
 <lable>age:</lable>
 <input
+          name="age"
           type="text"
           value={this.state.age}
           onChange={this.handleChange}
         />
 <lable>breed:</lable>
-<input
+        <input
+          name="breed"
           type="text"
           value={this.state.breed}
           onChange={this.handleChange}
         />
 <lable>weight:</lable>
-<input
+        <input
+          name="weight"
           type="text"
           value={this.state.weight}
           onChange={this.handleChange}
         />
 <lable>height:</lable>
-<input
+        <input
+          name="height"
           type="text"
           value={this.state.height}
           onChange={this.handleChange}
         />
 <lable>shelter:</lable>
-<input
+        <input
+          name="shelter"
           type="text"
           value={this.state.shelter}
           onChange={this.handleChange}
         />
 <lable>image:</lable>
-<input
+        <input
+          name="image"
           type="text"
           value={this.state.image}
           onChange={this.handleChange}
         />
 <lable>description:</lable>
-<input
+        <input
+          name="description"
           type="text"
           value={this.state.description}
           onChange={this.handleChange}

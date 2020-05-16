@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import '../App.css'
+import './Login.css'
 export default class Login extends Component {
   state = {
     username: '',
@@ -18,7 +19,7 @@ export default class Login extends Component {
   render() {
     const { username, email, password } = this.state;
     return (
-      <>
+      <div className="form-container">
         <h3>Login</h3>
         <form
           className="auth-form"
@@ -54,7 +55,7 @@ export default class Login extends Component {
           <p>Not a member? <Link to='/register'>register</Link></p>
           <button>Submit</button>
         </form>
-      </>
+      </div>
     )
   }
 }
