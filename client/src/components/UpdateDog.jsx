@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getOneDog } from '../services/api-helper';
 import '../App.css'
+import './UpdateDog.css'
 export default class UpdateDog extends Component {
   state = {
     name: "",
@@ -43,78 +44,104 @@ export default class UpdateDog extends Component {
 
   render() {
     return (
-      <form onSubmit={(e) => {
+      <div className="main-container">
+        <h3>Update Dog</h3>
+      <form className="edit-update" onSubmit={(e) => {
         e.preventDefault();
         this.props.handleDogUpdate(this.props.dogId, this.state);
         this.props.history.push('/dogs');
-      }}>
-        <h3>Update Dog</h3>
+        }}>
+        
+          <div className="image-container">
+          {/* <img className="edit-image" src={dog.image} alt={dog.name}/> */}
+          <lable>image:</lable>
+          <input className="input-image"
+          name="image"
+          type="text"
+          value={this.state.image}
+          onChange={this.handleChange}
+          />
+        </div>
+        
+        <div className="edit-container">  
         <lable>name:</lable>
-        <input
+        <input className="edit-input"
           name="name"
           type="text"
           value={this.state.name}
           onChange={this.handleChange}
-        />
-<lable>sex:</lable>
-<input
+         />
+      
+        <lable>sex:</lable>
+        <input className="edit-input"
           name="sex"
           type="text"
           value={this.state.sex}
           onChange={this.handleChange}
-        />
-<lable>age:</lable>
-<input
+          />
+      
+        <lable>age:</lable>
+        <input className="edit-input"
           name="age"
           type="text"
           value={this.state.age}
           onChange={this.handleChange}
         />
-<lable>breed:</lable>
-        <input
+          
+      
+        <lable>breed:</lable>
+        <input className="edit-input"
           name="breed"
           type="text"
           value={this.state.breed}
           onChange={this.handleChange}
         />
-<lable>weight:</lable>
-        <input
+         
+          
+      
+        <lable>weight:</lable>
+        <input className="edit-input"
           name="weight"
           type="text"
           value={this.state.weight}
           onChange={this.handleChange}
-        />
-<lable>height:</lable>
-        <input
+            />
+          
+
+      
+        <lable>height:</lable>
+        <input className="edit-input"
           name="height"
           type="text"
           value={this.state.height}
           onChange={this.handleChange}
-        />
-<lable>shelter:</lable>
-        <input
+            />
+      
+        <lable>shelter:</lable>
+          <input className="edit-input"
           name="shelter"
           type="text"
           value={this.state.shelter}
           onChange={this.handleChange}
-        />
-<lable>image:</lable>
-        <input
-          name="image"
-          type="text"
-          value={this.state.image}
-          onChange={this.handleChange}
-        />
-<lable>description:</lable>
-        <input
+            />
+          
+            <textarea className="textarea-description"
+              rows={10}
+              cols={78}
           name="description"
           type="text"
           value={this.state.description}
           onChange={this.handleChange}
-        />
-        <button>Submit</button>
+          />
+           
+            <button className="save-button">Submit</button>
+          </div>
 
-      </form>
+
+        
+
+        </form>
+        </div>
     )
   }
 }

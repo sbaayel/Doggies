@@ -50,9 +50,9 @@ export default class Main extends Component {
 
   handleAdoptSubmit = async (adoptData, dogId) => {
     const adoptDog = await postAdopt(adoptData, dogId);
-    this.setState(prevState => ({
-      posts: [...prevState.posts, adoptDog]
-    }))
+    // this.setState(prevState => ({
+    //   dogs: [...prevState.dogs, adoptDog]
+    // }))
   }
 
 
