@@ -44,7 +44,7 @@ export default class UpdateDog extends Component {
 
   render() {
     return (
-      <div className="main-container">
+      <div className="create-mains-container">
         <h3>Update Dog</h3>
       <form  onSubmit={(e) => {
         e.preventDefault();
@@ -52,79 +52,75 @@ export default class UpdateDog extends Component {
         this.props.history.push('/dogs');
         }}>
         
-        <div className="edit-container">  
+        <div className="create-edit-container"> 
 {/* <img className="edit-image" src={dog.image} alt={dog.name}/> */}
-          <lable>image:</lable>
-          <input className="edit-input"
+          
+            <input className="create-edit-input"
+              placeholder="update image url"
           name="image"
           type="text"
           value={this.state.image}
           onChange={this.handleChange}
-          />
+            />
             
-
-
-        <lable className="lable">name:</lable>
-        <input className="edit-input"
+            <input className="create-edit-input"
+              placeholder="change name"
           name="name"
           type="text"
           value={this.state.name}
           onChange={this.handleChange}
-         />
-      
-        <lable>sex:</lable>
-        <input className="edit-input"
+            />
+            
+            <input className="create-edit-input"
+              placeholder="change sex"
           name="sex"
           type="text"
           value={this.state.sex}
           onChange={this.handleChange}
-          />
-      
-        <lable>age:</lable>
-        <input className="edit-input"
+            />
+            
+            <input className="create-edit-input"
+              placeholder="change age"
           name="age"
           type="text"
           value={this.state.age}
           onChange={this.handleChange}
-        />
-          
-      
-        <lable>breed:</lable>
-        <input className="edit-input"
+            />
+            
+            <input className="create-edit-input"
+              placeholder="change breed"
           name="breed"
           type="text"
           value={this.state.breed}
           onChange={this.handleChange}
-        />
-         
-          
-      
-        <lable>weight:</lable>
-        <input className="edit-input"
+            />
+            
+            <input className="create-edit-input"
+              placeholder="change weight"
           name="weight"
           type="text"
           value={this.state.weight}
           onChange={this.handleChange}
             />
-          
-
-      
-        <lable>height:</lable>
-        <input className="edit-input"
+        
+            <input className="create-edit-input"
+              placeholder="change height"
           name="height"
           type="text"
           value={this.state.height}
           onChange={this.handleChange}
             />
       
-        <lable>shelter:</lable>
-          <input className="edit-input"
+            <input className="create-edit-input"
+              placeholder="change shelter"
           name="shelter"
           type="text"
           value={this.state.shelter}
           onChange={this.handleChange}
             />
-          
+          </div>
+
+          <div className="description">
             <textarea className="textarea-description"
               rows={10}
               cols={78}
@@ -132,12 +128,9 @@ export default class UpdateDog extends Component {
           type="text"
           value={this.state.description}
           onChange={this.handleChange}
-          />
-           
-            <button className="save-button">Submit</button>
+            />
+            <button className="button">Submit</button>
           </div>
-
-
         
 
         </form>

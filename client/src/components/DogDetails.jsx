@@ -35,8 +35,9 @@ class DogDetails extends Component {
             <div className="image">
               <img src={dog.image} alt={dog.name} />
               <p>{dog.name}</p>
-            </div>
-            <div className="items">
+              </div>
+              <span class="vertical-line"></span>
+            <div className="dog-items">
             
               <p>Age: {dog.age}</p>
               <p>Sex: {dog.sex}</p>
@@ -50,11 +51,11 @@ class DogDetails extends Component {
            
           </div>
           
-            <button onClick={() => {
+            <button className="edit-button" onClick={() => {
               this.props.history.push(`/dogs/${dog.id}/edit`);
             }}>Edit</button>
           
-            <button onClick={() => {
+            <button className="edit-button" onClick={() => {
               this.props.handleDogDelete(dog.id);
               this.props.history.push(`/dogs`);
             }}>Delete</button>
