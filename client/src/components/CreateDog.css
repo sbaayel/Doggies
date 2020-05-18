@@ -1,217 +1,77 @@
-.create-form {
-  margin-top: 50px;
-    padding-top: 100px;
-    padding-left:150px;
-    padding-right:150px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-evenly;
-    
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+.create-main-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 5px;
+  justify-content: center;
+  padding-left: 200px;
+  width: 100%;
+  margin-left: 160px;
+  
 }
 
-label {
-  font-size: 40px;
-  width: 20px;
+h3{
+  margin-top: 100px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 20px;
+  text-align: center;
+
 }
 
-input:focus, textarea:focus, select:focus {
-    outline: none;
-}
-
-input, textarea {
-    font-size: 64px;
+.create-edit-container {
+  display: flex;
+  flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
     width: 100%;
-   font-family: 'Share Tech', sans-serif;
-   border: solid gray 1px;
-   border-radius: 10px;
-   padding: 30px;
-     
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-textarea {
-    font-size: 28px;
-    width: 100%;
-    font-family: 'Share Tech', sans-serif;
+.create-edit-input {
+  display: flex;
+  width: 50%;
+  flex-direction: row-reverse;
+  padding: 12px 20px;
+  margin: 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+    align-self: center;
+    font-size: 14px;
+
 }
-
-h1 {
-    font-size: 40px;
-    color: #000033;
-    margin-top: 220px;
-    margin-bottom: 90px;
-    font-family: 'Share Tech', sans-serif;
-    text-align: center;
-    margin-top: 130px;
-}
-
-.input-name {
-    font-size: 44px;
-    font-family: 'Share Tech', sans-serif;
-    width: 300px;
-    
-}
-
-
-.author-name {
-  margin-right: 20px;
-  font-family: 'Share Tech', sans-serif;
-  padding: 20px;
-}
-
-
-.input-author {
-  font-size: 44px;
-  padding: 20px;
-}
-.title-name{
-  margin-right: 160px;
-  font-family: 'Share Tech', sans-serif;
-  padding: 20px;
-}
-
-.subtitle-name {
-  margin-right: 110px;
-  font-family: 'Share Tech', sans-serif;
-  padding: 20px;
-}
-
-.subtitle-div {
+.description{
+  display:flex; 
+  width: 50%;
   margin-bottom: 50px;
-  font-family: 'Share Tech', sans-serif;
 }
 
 .textarea-description {
-  font-family: 'Share Tech', sans-serif;
-  padding: 20px;
-}
- 
-.image-div {
-  font-family: 'Share Tech', sans-serif;
-  padding: 20px;
-}
 
-.blog-div {
-  font-family: 'Share Tech', sans-serif;
-  padding: 20px;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  font-size: 15px;
 }
-
-.input-image-link {
-    font-size: 44px;
-    font-family: 'Share Tech', sans-serif;
-    width: 100%;
-}
-
-.submit-button {
-    font-size: 28px;
-    font-family: 'Share Tech', sans-serif;
-margin: 0 auto;
-    height: 80px;
-    margin-top: 40px;
-    margin-bottom: 300px;
+.button {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 40px;
+    width: 100px;
     background-color: #000033;
+    margin-top: 40px;
+    margin-left: 40px;
+   padding: 2px;
     color: white;
     border: none;
     box-shadow: 2px 2px 10px 2px #CECECE;
     cursor: pointer;
-    width: 200px;
-   
-}
-
-@media (max-width: 500px) {
-  .create-form {
-    margin-top: -150px;
-      padding-top: 100px;
-      padding-left:31px;
-      padding-right:31px;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      width: 90vw;
-      justify-content: space-evenly;
-      font-size: 35px;
-      
-  }
-  
-  label {
-    font-size: 20px;
-    
-  }
-  
-  
-  input, textarea {
-      font-size: 26px;
-      width: 100%;
-     font-family: 'Share Tech', sans-serif;
-     border: solid black 1px;
-       
-  }
-  
-  textarea {
-      font-size: 28px;
-      width: 100%;
-      font-family: 'Share Tech', sans-serif;
-  }
-  
-  h1 {
-      font-size: 35px;
-      margin-top: 120px;
-  }
-  
-  .input-name {
-      font-size: 20px;
-      font-family: 'Share Tech', sans-serif;
-      
-  }
-  
-  .author-name {
-    margin-right: 20px;
-    font-family: 'Share Tech', sans-serif;
-  }
-  .title-name{
-    margin-right: 160px;
-    font-family: 'Share Tech', sans-serif;
-   
-  }
-  
-  .subtitle-name {
-    margin-right: 110px;
-    font-family: 'Share Tech', sans-serif;
-  }
-  
-  .subtitle-div {
-    margin-bottom: 50px;
-    font-family: 'Share Tech', sans-serif;
-  }
-  
-  .textarea-description {
-    font-family: 'Share Tech', sans-serif;
-    height: 300px;
-  }
-   
-  .image-div {
-    font-family: 'Share Tech', sans-serif;
-    
-  }
-  
-  .blog-div {
-    font-family: 'Share Tech', sans-serif;
-  }
-  
-  .input-image-link {
-      font-size: 30px;
-      font-family: 'Share Tech', sans-serif;
-      width: 100%;
-  }
-  
-  .submit-button {
-      font-size: 20px;
-      height: 40px;
-  }
-
-  .product-name{
-    font-size: 30px;
-    margin-left: 100px;
-    width: 250px;
-  }
 }

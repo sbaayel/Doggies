@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
+import './CreateDog.css'
 export default class CreateDog extends Component {
   state = {
 
@@ -25,14 +26,19 @@ export default class CreateDog extends Component {
   render() {
     const { name, age, sex, breed, height, weight, description, shelter, image} = this.state;
     return (
+      <div className="create-main-container">
+        
       <form className="create-form" onSubmit={(e) => {
         e.preventDefault();
         this.props.handleDogSubmit(this.state);
         this.props.history.push('/dogs');
       }}>
-        <h3>Add a Dog</h3>
-        <label htmlFor="name">name:</label>
-        <input
+          <h3>Add a Dog</h3>
+          <div className="create-edit-container">
+            
+      
+            <input className="create-edit-input"
+               placeholder="Add dogs name here"
           id="name"
           type="text"
           name="name"
@@ -40,8 +46,9 @@ export default class CreateDog extends Component {
           onChange={this.handleChange}
         />
 
-      <label htmlFor="age">age:</label>
-        <input
+     
+            <input className="create-edit-input"
+              placeholder="Age"
           id="age"
           type="text"
           name="age"
@@ -49,8 +56,9 @@ export default class CreateDog extends Component {
           onChange={this.handleChange}
         />
 
-       <label htmlFor="sex">sex:</label>
-        <input
+       
+            <input className="create-edit-input"
+               placeholder="Sex eg. Male or Female"
           id="sex"
           type="text"
           name="sex"
@@ -58,8 +66,9 @@ export default class CreateDog extends Component {
           onChange={this.handleChange}
         />
 
-        <label htmlFor="breed">breed:</label>
-        <input
+       
+            <input className="create-edit-input"
+               placeholder="Breed eg. golden retriever etc..."
           id="breed"
           type="text"
           name="breed"
@@ -67,8 +76,9 @@ export default class CreateDog extends Component {
           onChange={this.handleChange}
         />
 
-      <label htmlFor="height">height:</label>
-        <input
+      
+            <input className="create-edit-input"
+               placeholder="Hieght eg. 24 inches etc..."
           id="height"
           type="text"
           name="height"
@@ -76,8 +86,9 @@ export default class CreateDog extends Component {
           onChange={this.handleChange}
         />
         
-        <label htmlFor="weight">weight:</label>
-        <input
+       
+            <input className="create-edit-input"
+               placeholder="Weight eg. 24lb .."
           id="weight"
           type="text"
           name="weight"
@@ -85,8 +96,9 @@ export default class CreateDog extends Component {
           onChange={this.handleChange}
         />
 
-       <label htmlFor="shelter">shelter:</label>
-        <input
+       
+            <input className="create-edit-input"
+               placeholder="Shelter eg. Your shelter name... "
           id="shselter"
           type="text"
           name="shelter"
@@ -94,26 +106,37 @@ export default class CreateDog extends Component {
           onChange={this.handleChange}
         />
 
-<label className="blog-div" htmlFor="description">Write decription:</label>
-        <input
-          id="description"
-          type="text"
-          name="description"
-          value={description}
-          onChange={this.handleChange}
-        />
 
-<label className="image-div" htmlFor="image">image:</label>
-        <input
+            <input className="create-edit-input"
+               placeholder="image url eg: https://www.washingtonpost.comarc-anglerfish-washpost-prod-washpost/public/HB4AT3D3IMI6TMPTWIZ74WAR54.jpg "
           id="image"
           type="text"
           name="image"
           value={image}
           onChange={this.handleChange}
         />
-        <button>Submit</button>
+              
+           
+          </div>
 
-      </form>
+          <div className="description">
+      
+            <textarea className="textarea-description"
+              placeholder="Tell would be adopter about the dog you are putting for adoption here... "
+              rows={10}
+              cols={78}
+          id="description"
+          type="text"
+          name="description"
+          value={description}
+          onChange={this.handleChange}
+            />
+            <button className="button">Submit</button>
+          </div>
+          
+
+        </form>
+      </div>
     )
   }
 }

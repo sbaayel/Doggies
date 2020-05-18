@@ -52,8 +52,6 @@ export default class UpdateDog extends Component {
         this.props.history.push('/dogs');
         }}>
         
-         
-        
         <div className="edit-container">  
 {/* <img className="edit-image" src={dog.image} alt={dog.name}/> */}
           <lable>image:</lable>
