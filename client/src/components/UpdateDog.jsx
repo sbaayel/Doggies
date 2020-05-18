@@ -46,25 +46,27 @@ export default class UpdateDog extends Component {
     return (
       <div className="main-container">
         <h3>Update Dog</h3>
-      <form className="edit-update" onSubmit={(e) => {
+      <form  onSubmit={(e) => {
         e.preventDefault();
         this.props.handleDogUpdate(this.props.dogId, this.state);
         this.props.history.push('/dogs');
         }}>
         
-          <div className="image-container">
-          {/* <img className="edit-image" src={dog.image} alt={dog.name}/> */}
+         
+        
+        <div className="edit-container">  
+{/* <img className="edit-image" src={dog.image} alt={dog.name}/> */}
           <lable>image:</lable>
-          <input className="input-image"
+          <input className="edit-input"
           name="image"
           type="text"
           value={this.state.image}
           onChange={this.handleChange}
           />
-        </div>
-        
-        <div className="edit-container">  
-        <lable>name:</lable>
+            
+
+
+        <lable className="lable">name:</lable>
         <input className="edit-input"
           name="name"
           type="text"

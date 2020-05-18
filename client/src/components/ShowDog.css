@@ -10,22 +10,23 @@ div.row {
   margin-top: 100px; 
   align-self: left;
   padding-left: -5px;
+  min-height: 100vh;
 }
 
 .cell {
  
  
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 10px 30px 0px 0px;
-   
+    margin: 10px 30px 10px 50px;
+   width:200px;
     padding: 10px;
 }
 
 img {
   display: block;
   object-fit: cover;
- 
-  height: 350px;
+ max-width:200px;
+  height: 200px;
 }
 .dog-name{
   padding-right: 25px;

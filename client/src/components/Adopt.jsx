@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Modal from 'react-awesome-modal';
 import {Link} from 'react-router-dom'
 import '../App.css'
+import './Adopt.css'
 export default class Adopt extends Component {
   state = {
     name: '',
@@ -33,14 +34,9 @@ closeModal() {
   render() {
     const { name, address, message} = this.state;
     return (
-      <>
-        {/* <input type="button" value="Open" onClick={() => this.openModal()} />
-        <Modal visible={this.state.visible}
-                    width="400"
-                    height="300"
-                    effect="fadeInUp"
-                    onClickAway={() => this.closeModal()}> */}
-      <form className="auth-form"
+      <div className="adopt-container">
+       
+      <form 
         onSubmit={(e) => {
         e.preventDefault();
         this.props.handleAdoptSubmit(this.state, this.state.dog_id);
@@ -75,10 +71,10 @@ closeModal() {
         />
         <br />
             <button>Submit</button>
-            <Link to="/dogs" onClick={() => this.closeModal()}>Close</Link>
+           
           </form>
-        {/* </Modal> */}
-       </>
+        
+       </div>
     )
   }
 }

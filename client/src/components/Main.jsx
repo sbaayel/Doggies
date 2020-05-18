@@ -9,7 +9,7 @@ import CreateDog from './CreateDog';
 import UpdateDog from './UpdateDog';
 import Adopt from './Adopt'
 import DogDetails from './DogDetails'
-
+import Home from './Home'
 
 export default class Main extends Component {
   state = {
@@ -69,6 +69,7 @@ export default class Main extends Component {
   render() {
     return (
       <main>
+        
         <Route path='/login' render={(props) => (
           <Login
             {...props}
@@ -127,6 +128,7 @@ export default class Main extends Component {
 }
 
       </main>
+      
     )
   }
 }

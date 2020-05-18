@@ -4,6 +4,7 @@ import './App.css'
 
 import Header from './components/Header';
 import Main from './components/Main';
+
 import {
   loginUser,
   registerUser,
@@ -63,6 +64,7 @@ class App extends Component {
           
           
         />
+       
         <Main
           handleRegister={this.handleRegister}
           handleLogin={this.handleLogin}
